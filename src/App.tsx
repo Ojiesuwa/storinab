@@ -21,6 +21,7 @@ function App() {
         <AuthProvider>
           <Header />
           <Routes>
+            <Route path={"*"} element={<Home />} />
             <Route path={routes.home.dynamic} element={<Home />} />
             <Route
               path={routes.productView.dynamic}
