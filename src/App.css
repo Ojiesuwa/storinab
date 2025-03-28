@@ -3,15 +3,26 @@
 
 /* Root variable */
 :root {
-  --accent-color: #1D63FF;
-  --complimentary-color: #FF595A;
+  --accent-color: #1d63ff;
+  --accent-color-darker: #00277a;
+  --complimentary-color: #ff595a;
 
   --clipboard-bg: rgba(255, 255, 255, 20%);
   --stroke-color: rgba(0, 0, 0, 30%);
   --text-color: #222;
 
   --background-color: #fff;
+  --background-color-lighter: #ededed;
+  --background-color-lighter-x2: #f6f6f6;
   --button-color: #222;
+
+  --translucent-bg: rgba(0, 0, 0, 0.3);
+  --translucent-bg-light: rgba(0, 0, 0, 0.1);
+  --translucent-bg-light-x2: rgba(0, 0, 0, 0.05);
+
+  --translucent-bg-reverse: rgba(255, 255, 255, 0.3);
+  --translucent-bg-light-reverse: rgba(255, 255, 255, 0.1);
+  --translucent-bg-light-x2-reverse: rgba(255, 255, 255, 0.05);
 }
 
 /* General styling */
@@ -48,4 +59,96 @@ body {
   display: flex;
   flex-direction: column;
   /* gap: 20px; */
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scaleY(0.8);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+  &:disabled:hover{
+    cursor: not-allowed;
+  }
+}
+
+button img {
+  width: 20px;
+}
+
+.button-blue {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.button-red {
+  background-color: var(--complimentary-color);
+}
+
+/* Text Boxes */
+input {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid var(--translucent-bg-light);
+  padding: 0 20px;
+}
+textarea {
+  width: 100%;
+  min-height: 60px;
+  border-radius: 8px;
+  border: 1px solid var(--translucent-bg-light);
+  padding: 10px 10px;
+}
+
+select {
+  width: 100%;
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid var(--translucent-bg);
+  padding: 0 20px;
+}
+
+/* Miscelleanous */
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--translucent-bg-light);
+}
+
+.small-text {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.Toastify__close-button {
+  width: fit-content;
+}
+/* Add this to your CSS file or a <style> tag */
+.custom-toast {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.red {
+  color: red;
 }

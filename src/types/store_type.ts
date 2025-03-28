@@ -1,4 +1,4 @@
-export interface storeType {
+export interface StoreType {
   storeId: string;
   ownerId: string;
   name: string;
@@ -18,7 +18,7 @@ export interface storeType {
   totalSales: number;
   totalOrders: number;
   totalProducts: number;
-  totalRating: number;
-  totalRatingCount: number;
+  totalRating?: number;
+  totalRatingCount?: number;
   followers: number;
 }

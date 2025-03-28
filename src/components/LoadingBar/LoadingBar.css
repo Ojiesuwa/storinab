@@ -1,0 +1,32 @@
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--translucent-bg);
+  width: 100vw;
+  height: 100svh;
+}
+
+/* Loading bar container */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%; /* Bar size */
+  height: 2px;
+  background: #fff;
+  animation: moveBar 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for smooth left-right movement */
+@keyframes moveBar {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 70%; /* Moves across the screen */
+  }
+  100% {
+    left: 0;
+  }
+}

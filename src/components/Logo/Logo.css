@@ -1,0 +1,20 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.logo-image {
+  height: 23px;
+}
+
+.logo-text {
+  color: #fff;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  font-size: 18px;
+}

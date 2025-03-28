@@ -1,0 +1,15 @@
+
+.star-review .b {
+  opacity: 0.2;
+}
+
+.star-review .g {
+  opacity: 1;
+  color: gold;
+}
+
+@media screen and (max-width: 800px) {
+  .star-review i {
+    font-size: 13px;
+  }
+}

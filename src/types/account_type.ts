@@ -1,11 +1,13 @@
+import { CartType } from "./cart_type";
+
 export interface AccountType {
   accountId: string;
-  email: string;
-  fullname: string;
-  phoneNumber: string;
-  profileImage: string;
-  role: [];
-  stores: [];
+  email: string | null;
+  fullname: string | null;
+  phoneNumber: string | null;
+  profileImage: string | null;
+  role: string[];
+  stores: string[];
   accountStatus: boolean;
   createdAt: Date;
   updateAt: Date;
@@ -14,4 +16,8 @@ export interface AccountType {
   totalProductsUploaded: number;
   totalSales: number;
   lastLogin: Date;
+  favourites: [];
+  recentlyViewedCategory?: [];
+  cart?: CartType[];
+  followingStores?: []
 }

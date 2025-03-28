@@ -1,0 +1,23 @@
+.product-image-list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+}
+
+.product-image-list img {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 4px solid var(--translucent-bg);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.product-image-list .current-active-image {
+  border-color: var(--accent-color);
+}

@@ -1,14 +1,16 @@
-export interface productType {
+export interface ProductType {
   productId: string;
   storeId: string;
+  storeName: string;
   name: string;
   description: string;
-  category: string[];
+  category: string[] | any;
   tags: string[];
   brand: string | null;
   createdAt: Date;
   updatedAt: Date;
   price: number;
+  oldPrice: number | null;
   discount: number;
   stockQuantity: number;
   isAvailable: boolean;
@@ -17,9 +19,11 @@ export interface productType {
   weight: string;
   dimension: { length: string; width: string; height: string };
   hasVariants: boolean;
-  variants: {};
+  variants: {}[];
   totalSales: number;
   totalRating: number;
   totalRatingCount: number;
   isVisible: boolean;
+  reviewId?: string;
+  seo?: string[];
 }

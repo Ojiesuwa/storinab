@@ -12,12 +12,22 @@ interface storeCart {
   products: storeCartProduct[];
 }
 
-interface storeCartProduct{
+interface storeCartProduct {
   productId: string;
   name: string;
   imageURL: string;
   quantity: number;
   price: number;
-  selectedVariant:{}
+  selectedVariant: {};
+}
 
+export interface CartType {
+  cartImage: string;
+  productName: string;
+  price: number;
+  quantity: number;
+  storeName: string;
+  variation: any;
+  productId: string;
+  category?:[]
 }

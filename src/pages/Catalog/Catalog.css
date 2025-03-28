@@ -1,0 +1,109 @@
+.catalog {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 20px 30px;
+  overflow: hidden;
+}
+
+.catalog .category-wrapper {
+  width: 300px;
+  height: 100%;
+  flex-shrink: 0;
+  border-right: 1px solid var(--translucent-bg);
+}
+
+.catalog .all-products-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.catalog .search-container {
+  width: 100%;
+}
+
+.catalog .catalog-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: auto;
+  height: 100%;
+  gap: 20px;
+  padding-bottom: 200px;
+  align-items: stretch;
+  overflow-x: hidden;
+}
+
+.catalog .search-container i {
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.catalog .catalog-list .product-card {
+  border: 1px solid var(--translucent-bg);
+  /* border-radius: 5px; */
+}
+.catalog .fa-bars-filter {
+  display: none;
+}
+
+@media screen and (max-width: 970px) {
+  .catalog .catalog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .catalog {
+    padding: 20px 10px;
+  }
+  .catalog .fa-bars-filter {
+    display: block;
+  }
+
+  .catalog .catalog-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .catalog .all-products-wrapper {
+    width: 100%;
+  }
+
+  .catalog .category-wrapper {
+    /* display: none; */
+    position: fixed;
+    height: 100svh;
+    z-index: 300;
+    background-color: var(--background-color);
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .catalog .mobile-filter-inactive {
+    left: -100%;
+  }
+  .catalog .mobile-filter-active {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .catalog .catalog-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 10px; /* Optional: Adds spacing between cards */
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .catalog .catalog-list {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10px 10px;
+    column-gap: 5px;
+    row-gap: 5px;
+  }
+}
