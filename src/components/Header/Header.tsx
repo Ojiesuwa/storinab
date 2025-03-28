@@ -7,12 +7,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../routes/routes";
 import AvatarDropDown from "../AvatarDropDown/AvatarDropDown";
-import { toast } from "react-toastify";
-import {
-  getCollectionByName,
-  updateDocumentById,
-} from "../../firebase/firebaseTools";
-import { StoreType } from "../../types/store_type";
+
 const Header = () => {
   const { accountDetail, setIsAuthVisible, userCredential } = useAuth();
   const navigate = useNavigate();
@@ -52,47 +47,47 @@ const Header = () => {
     }
   };
 
-  const run = async () => {
-    try {
-      const stores: StoreType[] | any = await getCollectionByName("Store");
-      stores.forEach(async (element: StoreType) => {
-        const payload: StoreType = {
-          storeId: element.storeId,
-          ownerId: accountDetail?.accountId || "",
-          name: element.name,
-          description: `This store belongs to ${element.name}`,
-          logoURL:
-            "https://cdn.pixabay.com/photo/2020/01/09/20/34/bmw-4753868_1280.jpg",
-          bannerURL:
-            "https://cdn.pixabay.com/photo/2016/04/22/15/55/boardinghouse-1346004_1280.jpg",
-          category: [],
-          tags: [],
-          createdAt: new Date(),
-          updatedAt: new Date(),
-          isActive: true,
-          email: accountDetail?.email || "",
-          phone: "",
-          socialLink: [],
-          shippingCost: 1000,
-          returnPolicy: `At ${element.name}, we want you to be completely satisfied with your purchase. If you are not, you may request a return within 5 days, provided the item is unused, in its original packaging, and in resalable condition. Certain items, such as digital products, personalized goods, or final sale items, are non-returnable. Once we receive and inspect the returned item, we will process a refund to your original payment method within 5 business days, though shipping costs may be non-refundable. If you received a defective or incorrect item, we offer exchanges at no additional cost. To initiate a return, please contact our customer support team at ${accountDetail?.email} with your order details.`,
-          totalSales: Math.round(Math.random() * 20),
-          totalOrders: Math.round(Math.random() * 30),
-          totalProducts: Math.round(Math.random() * 20),
+  // const run = async () => {
+  //   try {
+  //     const stores: StoreType[] | any = await getCollectionByName("Store");
+  //     stores.forEach(async (element: StoreType) => {
+  //       const payload: StoreType = {
+  //         storeId: element.storeId,
+  //         ownerId: accountDetail?.accountId || "",
+  //         name: element.name,
+  //         description: `This store belongs to ${element.name}`,
+  //         logoURL:
+  //           "https://cdn.pixabay.com/photo/2020/01/09/20/34/bmw-4753868_1280.jpg",
+  //         bannerURL:
+  //           "https://cdn.pixabay.com/photo/2016/04/22/15/55/boardinghouse-1346004_1280.jpg",
+  //         category: [],
+  //         tags: [],
+  //         createdAt: new Date(),
+  //         updatedAt: new Date(),
+  //         isActive: true,
+  //         email: accountDetail?.email || "",
+  //         phone: "",
+  //         socialLink: [],
+  //         shippingCost: 1000,
+  //         returnPolicy: `At ${element.name}, we want you to be completely satisfied with your purchase. If you are not, you may request a return within 5 days, provided the item is unused, in its original packaging, and in resalable condition. Certain items, such as digital products, personalized goods, or final sale items, are non-returnable. Once we receive and inspect the returned item, we will process a refund to your original payment method within 5 business days, though shipping costs may be non-refundable. If you received a defective or incorrect item, we offer exchanges at no additional cost. To initiate a return, please contact our customer support team at ${accountDetail?.email} with your order details.`,
+  //         totalSales: Math.round(Math.random() * 20),
+  //         totalOrders: Math.round(Math.random() * 30),
+  //         totalProducts: Math.round(Math.random() * 20),
 
-          followers: 10,
-        };
+  //         followers: 10,
+  //       };
 
-        await updateDocumentById("Store", element.storeId, { payload });
-      });
-      toast.success("Successful");
-    } catch (error) {
-      console.error(error);
-      toast.error("Error bruteforcing");
-    }
-  };
+  //       await updateDocumentById("Store", element.storeId, { payload });
+  //     });
+  //     toast.success("Successful");
+  //   } catch (error) {
+  //     console.error(error);
+  //     toast.error("Error bruteforcing");
+  //   }
+  // };
 
   return (
-    <div className="header fade-down" onClick={run}>
+    <div className="header fade-down">
       <div className="left-wing flex items-center gap-3">
         <i
           className="fa-light fa-bars"
