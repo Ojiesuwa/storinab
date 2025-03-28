@@ -3,8 +3,6 @@ import { ProductType } from "../types/product_type";
 import { toast } from "react-toastify";
 import { getDocumentById, updateDocumentById } from "../firebase/firebaseTools";
 import useAuth from "./useAuth";
-import { arrayUnion } from "firebase/firestore";
-import ProductView from "../pages/ProductView/ProductView";
 import { CartType } from "../types/cart_type";
 
 const useProductView = (productId: string) => {

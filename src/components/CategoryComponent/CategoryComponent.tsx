@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useSite from "../../hooks/useSite";
 import { capitalizeFirstLetter } from "../../utils/formatText";
 import "./CategoryComponent.css";
@@ -10,7 +10,7 @@ const CategoryComponent: React.FC<{
   setIsVisible: any;
   onCategoryChange?: any;
   onReset?: any;
-}> = ({ isVisible, setIsVisible, onCategoryChange, onReset }) => {
+}> = ({ setIsVisible, onCategoryChange, onReset }) => {
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
 

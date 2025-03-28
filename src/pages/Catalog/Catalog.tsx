@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import CategoryComponent from "../../components/CategoryComponent/CategoryComponent";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -14,7 +14,6 @@ const Catalog = () => {
   const [isSearched, setIsSearched] = useState(false);
 
   const {
-    fetchProducts,
     searchProducts,
     products,
     setCategoryData,

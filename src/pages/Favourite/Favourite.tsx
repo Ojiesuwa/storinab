@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import LoadingBar from "../../components/LoadingBar/LoadingBar";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import SearchBar from "../../components/SearchBar/SearchBar";

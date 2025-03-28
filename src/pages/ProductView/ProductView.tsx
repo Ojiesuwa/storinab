@@ -25,6 +25,7 @@ const ProductView = () => {
   );
 
   const handleAddToCart = (e: React.MouseEvent<HTMLElement>) => {
+    e;
     addProductToCart(quantity, selectedVariation);
   };
 

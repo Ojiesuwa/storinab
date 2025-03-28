@@ -8,6 +8,7 @@ import { ProductType } from "../types/product_type";
 import { CartType } from "../types/cart_type";
 
 const useAccount = (productIdSource?: string) => {
+  productIdSource;
   const { userCredential, accountDetail } = useAuth();
   const [account, setAccount] = useState<AccountType | null>(null);
   const [mainFetch, setMainFetch] = useState<ProductType[] | null>(null);

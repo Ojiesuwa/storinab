@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { RecommendedProducts } from "../../components/RecommendedProducts/RecommendedProducts";
 import "./Cart.css";
 import { CartType } from "../../types/cart_type";
-import useAuth from "../../hooks/useAuth";
 import useAccount from "../../hooks/useAccount";
 import { formatNumberWithSpaces } from "../../utils/formatNumber";
 
 const Cart = () => {
-  const { accountDetail } = useAuth();
   const { accountCart, incrementUsersCart, deleteAccountCart } = useAccount();
   const workingCart = accountCart;
   return (

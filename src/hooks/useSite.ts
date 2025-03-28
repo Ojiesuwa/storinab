@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import {
-  getCollectionByName,
-  getDocumentById,
-} from "../firebase/firebaseTools";
+import { getCollectionByName } from "../firebase/firebaseTools";
 import {
   collection,
   getDocs,
@@ -24,20 +21,20 @@ const useSite = () => {
   const [recommended, setRecommended] = useState([]);
   const { accountDetail } = useAuth();
 
-  const fetchAllProductInformation = async () => {
-    try {
-      const siteProductInformation = await getDocumentById(
-        "Site",
-        "productInformation"
-      );
+  // const fetchAllProductInformation = async () => {
+  //   try {
+  //     const siteProductInformation = await getDocumentById(
+  //       "Site",
+  //       "productInformation"
+  //     );
 
-      setSiteCategories(siteProductInformation.productCategories || []);
-      setSiteBrands(siteProductInformation.productBrands || []);
-    } catch (error) {
-      console.error(error);
-      toast.error("Error fetching categories");
-    }
-  };
+  //     setSiteCategories(siteProductInformation.productCategories || []);
+  //     setSiteBrands(siteProductInformation.productBrands || []);
+  //   } catch (error) {
+  //     console.error(error);
+  //     toast.error("Error fetching categories");
+  //   }
+  // };
 
   const fetchAllInformation = async () => {
     try {

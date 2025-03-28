@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  collection,
-  getDocs,
-  orderBy,
-  query,
-  QueryDocumentSnapshot,
-} from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { ProductType } from "../types/product_type";
 import { algoliasearch } from "algoliasearch";
@@ -118,6 +112,7 @@ const useProducts = (setIsLoading: (isLoading: boolean) => void) => {
 
   const fetchProducts = async (isFirst: boolean | null) => {
     try {
+      isFirst;
       setIsLoading(true);
       const colRef = collection(db, "Product");
       const q = query(colRef, orderBy("updatedAt", "desc"));
